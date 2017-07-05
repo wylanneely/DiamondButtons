@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6pR-CJ-H3M">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CustomTabbarController-->
+        <scene sceneID="JsZ-Pq-9pY">
+            <objects>
+                <viewController title="CustomTabbarController" id="6pR-CJ-H3M" customClass="CustomTabbarViewController" customModule="CustomTabbarController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KEz-ou-rD2"/>
+                        <viewControllerLayoutGuide type="bottom" id="0ny-P3-fcA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LaN-4m-XZq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewBackGroubdLAyoutGuideNOtes" translatesAutoresizingMaskIntoConstraints="NO" id="g9w-UZ-QPy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0ny-P3-fcA" firstAttribute="top" secondItem="g9w-UZ-QPy" secondAttribute="bottom" id="42P-go-akv"/>
+                            <constraint firstItem="g9w-UZ-QPy" firstAttribute="top" secondItem="LaN-4m-XZq" secondAttribute="top" id="Lw2-56-tmc"/>
+                            <constraint firstAttribute="trailing" secondItem="g9w-UZ-QPy" secondAttribute="trailing" id="eML-Xa-sf2"/>
+                            <constraint firstItem="g9w-UZ-QPy" firstAttribute="leading" secondItem="LaN-4m-XZq" secondAttribute="leading" id="oWn-Xe-rUu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="982-JR-d6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.799999999999997" y="105.69715142428787"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NewBackGroubdLAyoutGuideNOtes" width="16" height="16"/>
+    </resources>
+</document>
