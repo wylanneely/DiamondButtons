@@ -10,6 +10,7 @@ import UIKit
 
 class CustomTabbarViewController: UIViewController {
     
+    
 //    let centerMarker = UIButton()
 
     let aButton = DiamondShapedButton()
@@ -29,7 +30,13 @@ class CustomTabbarViewController: UIViewController {
     
     func setUpButtons() {
         
-        cButton.addTarget(self, action: #selector(cButtonTapped), for: .touchUpInside)
+        aButton.tag = 0
+        bButton.tag = 1
+        cButton.tag = 2
+        dButton.tag = 3
+        eButton.tag = 4
+        fButton.tag = 5
+        gButton.tag = 6
         
         view.addSubview(aButton)
         view.addSubview(bButton)
@@ -44,11 +51,6 @@ class CustomTabbarViewController: UIViewController {
         
     }
     
-    func cButtonTapped() {
-        
-        
-        
-    }
     
     func setupContraints(){
         
@@ -166,12 +168,12 @@ class CustomTabbarViewController: UIViewController {
 
 class DiamondShapedButton: UIButton {
     
+    var soundController = SoundController()
     var path: UIBezierPath!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = UIColor.green
+        backgroundColor = UIColor.clear
         addTarget(self, action: #selector(touchDown), for: .touchDown)
     }
     
@@ -198,18 +200,18 @@ class DiamondShapedButton: UIButton {
     
     
     func touchDown(button: DiamondShapedButton, event: UIEvent) {
+        
         if let touch = event.touches(for: button)?.first {
             let location = touch.location(in: button)
             
             if path.contains(location) == false {
                 button.cancelTracking(with: nil)
-                print("TestingOutside")
 
             }
             if path.contains(location) == true {
                 button.cancelTracking(with: nil)
-                print("TestingInside")
-                
+                soundController.callSoundBy(noteIndex: button.tag)
+
             }
         }
 
