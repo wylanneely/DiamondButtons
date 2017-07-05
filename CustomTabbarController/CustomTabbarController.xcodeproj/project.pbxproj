@@ -27,6 +27,8 @@
 		B25EACDE1F0AC05B00D44377 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B25EACDC1F0AC05B00D44377 /* LaunchScreen.storyboard */; };
 		B25EACE91F0AC05B00D44377 /* CustomTabbarControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EACE81F0AC05B00D44377 /* CustomTabbarControllerTests.swift */; };
 		B25EACF51F0AC11E00D44377 /* CustomTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EACF41F0AC11E00D44377 /* CustomTabbarViewController.swift */; };
+		B2F5C5A71F0D9058001AB3ED /* DiamondShapedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5C5A61F0D9058001AB3ED /* DiamondShapedButton.swift */; };
+		B2F5C5A91F0D9403001AB3ED /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5C5A81F0D9403001AB3ED /* GameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		B25EACE81F0AC05B00D44377 /* CustomTabbarControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarControllerTests.swift; sourceTree = "<group>"; };
 		B25EACEA1F0AC05B00D44377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B25EACF41F0AC11E00D44377 /* CustomTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabbarViewController.swift; sourceTree = "<group>"; };
+		B2F5C5A61F0D9058001AB3ED /* DiamondShapedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiamondShapedButton.swift; sourceTree = "<group>"; };
+		B2F5C5A81F0D9403001AB3ED /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				B21BD8011F0D7F190034F712 /* SoundController.swift */,
+				B2F5C5A81F0D9403001AB3ED /* GameController.swift */,
 			);
 			name = ModelControllers;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 		B21BD7FE1F0D7D130034F712 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B2F5C5A61F0D9058001AB3ED /* DiamondShapedButton.swift */,
 				B21BD7FF1F0D7D830034F712 /* SoundFilesPath.swift */,
 			);
 			name = Models;
@@ -295,7 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B25EACF51F0AC11E00D44377 /* CustomTabbarViewController.swift in Sources */,
+				B2F5C5A91F0D9403001AB3ED /* GameController.swift in Sources */,
 				B21BD8021F0D7F190034F712 /* SoundController.swift in Sources */,
+				B2F5C5A71F0D9058001AB3ED /* DiamondShapedButton.swift in Sources */,
 				B25EACD41F0AC05B00D44377 /* AppDelegate.swift in Sources */,
 				B21BD8001F0D7D830034F712 /* SoundFilesPath.swift in Sources */,
 			);
