@@ -185,6 +185,7 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="bfx-Ff-VXc" id="cdZ-dq-qHb"/>
+                        <outlet property="tabbar" destination="CIE-yP-ulx" id="sTS-tT-bXb"/>
                         <outletCollection property="buttons" destination="bM1-SI-cuf" collectionClass="NSMutableArray" id="WeZ-bN-Mua"/>
                         <outletCollection property="buttons" destination="k00-M4-8tK" collectionClass="NSMutableArray" id="zwn-Gy-uGn"/>
                         <outletCollection property="buttons" destination="Bz7-hW-YKf" collectionClass="NSMutableArray" id="bXF-HA-g7x"/>
