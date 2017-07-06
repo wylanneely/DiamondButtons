@@ -10,14 +10,30 @@ import UIKit
 
 class CustomTabbarViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpButtons()
+        setupContraints()
+    }
+    
+    //MARK: -Controllers
     var soundController = SoundController()
     let game = GameController()
     
+    //MARK: - Labels
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var livesLabel: UILabel!
+    
+    func updateLabels() {
+        self.scoreLabel.text = "Score: \(game.score)"
+        self.livesLabel.text = "Lives: \(game.lifes)"
+    }
+    
+    //MARK: - IBActions
     @IBAction func resetButtonTapped(_ sender: Any) {
         game.resetGame()
         updateLabels()
     }
-    
     @IBAction func playButtonTapped(_ sender: Any) {
         game.getPlaySoundIndex()
         guard let soundIndex = game.lastPlaySoundIndex else {return}
@@ -25,40 +41,30 @@ class CustomTabbarViewController: UIViewController {
         updateLabels()
         
     }
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var livesLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpButtons()
-        setupContraints()
-    }
-    
-    func updateLabels() {
-        self.scoreLabel.text = "Score: \(game.score)"
-        self.livesLabel.text = "Lives: \(game.lifes)"
-    }
     
     
+    //MARK: - NoteButton Tapped
     func touchDown(button: DiamondShapedButton, event: UIEvent) {
         if let touch = event.touches(for: button)?.first {
             let location = touch.location(in: button)
             if button.path.contains(location) == true {
                 button.cancelTracking(with: nil)
+                
                 soundController.playSoundWith(noteIndex: button.tag)
-                if game.playButtonTapped == true {
-                   let result =  game.compareSoundToPlayedSound(buttonPressedIndex: button.tag)
-                    if result {
+                if game.isPlaying == true {
+                   let _ =  game.compareSoundToPlayedSound(buttonPressedIndex: button.tag)
                         updateLabels()
-                    } else {
-                        updateLabels()
+                    
+                    if game.lifes == 0 {
+                        self.presentAlert()
+                        
                     }
                 }
             }
         }
     }
     
-    
+    //MARK: - Buttons and Contraints
     
     let aButton = DiamondShapedButton()
     let bButton = DiamondShapedButton()
@@ -77,7 +83,6 @@ class CustomTabbarViewController: UIViewController {
         eButton.addTarget(self, action: #selector(touchDown), for: .touchDown)
         fButton.addTarget(self, action: #selector(touchDown), for: .touchDown)
         gButton.addTarget(self, action: #selector(touchDown), for: .touchDown)
-        
         
         aButton.tag = 0
         bButton.tag = 1
@@ -117,7 +122,7 @@ class CustomTabbarViewController: UIViewController {
                                               toItem: self.view, attribute: .height, multiplier: 1/8, constant: 0)
         self.view.addConstraints([aButtonXConstraint,aButtonYConstraint,aButtonHeight,aButtonWidth])
         
-        // Upper Center Buttom
+        // Upper Center Button
         let bButtonXConstraint = NSLayoutConstraint(item: self.bButton, attribute: .centerX, relatedBy: .equal,
                                                     toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
         let bButtonYConstraint = NSLayoutConstraint(item: self.bButton, attribute: .centerY, relatedBy: .equal,
@@ -182,6 +187,29 @@ class CustomTabbarViewController: UIViewController {
         let gButtonWidth = NSLayoutConstraint(item: self.gButton, attribute: .width, relatedBy: .equal,
                                               toItem: self.view, attribute: .height, multiplier: 1/8, constant: 0)
         self.view.addConstraints([gButtonXConstraint,gButtonYConstraint,gButtonWidth,gButtonHeight])
+        
+    }
+    
+    //MARK: - Alert
+    func presentAlert(){
+        
+        let alertController = UIAlertController(title: "Finished", message: "Good Job, Try Again?", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+        }
+        
+        let resetAction = UIAlertAction(title: "Reset", style: .default) { _ in
+            self.game.resetGame()
+            self.game.getPlaySoundIndex()
+            guard let soundIndex = self.game.lastPlaySoundIndex else {return}
+            self.soundController.playSoundWith(noteIndex: soundIndex)
+            self.updateLabels()
+            
+        }
+        alertController.addAction(resetAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
         
     }
 }

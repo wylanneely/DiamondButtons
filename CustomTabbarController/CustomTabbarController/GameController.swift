@@ -13,24 +13,21 @@ class GameController {
     
     var lastPlaySoundIndex: Int?
     var lifes: Int = 3
-    var alive: Bool = true
-    var playButtonTapped: Bool = false
+    var isPlaying: Bool = false
     var score: Int = 0
     
     let sound = SoundFilesPath()
     var soundPlayer = AVAudioPlayer()
     
-     func getPlaySoundIndex(){
+    func getPlaySoundIndex(){
         let randomIndex = Int(arc4random_uniform(6))
         self.lastPlaySoundIndex = randomIndex
-        self.playButtonTapped = true
+        self.isPlaying = true
     }
     
     func compareSoundToPlayedSound(buttonPressedIndex: Int ) -> Bool{
-        if lastPlaySoundIndex == buttonPressedIndex { score += 1
-            return true }
-        else{ lifes -= 1
-            ; return true }
+        if lastPlaySoundIndex == buttonPressedIndex { score += 1; return true }
+        else{ lifes -= 1; return true }
     }
     
     func isAlive() -> Bool{
@@ -42,7 +39,7 @@ class GameController {
     
     func resetGame(){
         self.lifes = 3
-        self.alive = true
+        self.score = 0
         self.lastPlaySoundIndex = nil
     }
     

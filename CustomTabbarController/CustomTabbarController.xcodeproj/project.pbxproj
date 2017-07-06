@@ -122,8 +122,8 @@
 		B21BD7FD1F0D7D110034F712 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B21BD8011F0D7F190034F712 /* SoundController.swift */,
 				B2F5C5A81F0D9403001AB3ED /* GameController.swift */,
+				B21BD8011F0D7F190034F712 /* SoundController.swift */,
 			);
 			name = ModelControllers;
 			sourceTree = "<group>";

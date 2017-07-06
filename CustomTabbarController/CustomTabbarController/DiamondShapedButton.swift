@@ -34,7 +34,7 @@ class DiamondShapedButton: UIButton {
         path.close()
         
         let shapeLayer = CAShapeLayer()
-        shapeLayer.strokeColor = UIColor.red.cgColor
+        shapeLayer.strokeColor = UIColor.clear.cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.path = path.cgPath
         layer.addSublayer(shapeLayer)
