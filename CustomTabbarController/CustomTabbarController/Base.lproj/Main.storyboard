@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6pR-CJ-H3M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="STp-jk-wcy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CustomTabbarController-->
+        <!--Main-->
         <scene sceneID="JsZ-Pq-9pY">
             <objects>
-                <viewController title="CustomTabbarController" id="6pR-CJ-H3M" customClass="CustomTabbarViewController" customModule="CustomTabbarController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main" id="6pR-CJ-H3M" customClass="MainViewController" customModule="CustomTabbarController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KEz-ou-rD2"/>
                         <viewControllerLayoutGuide type="bottom" id="0ny-P3-fcA"/>
@@ -54,12 +54,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRD-X6-WQc">
+                                <rect key="frame" x="16" y="617" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="0A8-qu-zBl" kind="show" id="4u3-Km-LHr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0ny-P3-fcA" firstAttribute="top" secondItem="g9w-UZ-QPy" secondAttribute="bottom" id="42P-go-akv"/>
                             <constraint firstItem="sTQ-Zi-VQ5" firstAttribute="leading" secondItem="LaN-4m-XZq" secondAttribute="leading" id="7GH-LB-R4L"/>
+                            <constraint firstItem="RRD-X6-WQc" firstAttribute="leading" secondItem="LaN-4m-XZq" secondAttribute="leadingMargin" id="DTS-nX-yr4"/>
                             <constraint firstItem="kRE-Vm-7Ja" firstAttribute="leading" secondItem="LaN-4m-XZq" secondAttribute="leadingMargin" constant="28" id="EB9-t6-uBi"/>
+                            <constraint firstItem="0ny-P3-fcA" firstAttribute="top" secondItem="RRD-X6-WQc" secondAttribute="bottom" constant="20" id="EXp-Ti-JcR"/>
                             <constraint firstItem="g9w-UZ-QPy" firstAttribute="top" secondItem="LaN-4m-XZq" secondAttribute="top" id="Lw2-56-tmc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nlx-zl-rxW" secondAttribute="trailing" constant="28" id="bIf-eB-eMq"/>
                             <constraint firstAttribute="trailing" secondItem="g9w-UZ-QPy" secondAttribute="trailing" id="eML-Xa-sf2"/>
@@ -77,10 +86,111 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="982-JR-d6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56.799999999999997" y="105.69715142428787"/>
+            <point key="canvasLocation" x="111" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Kr-6b-tNv">
+            <objects>
+                <viewController id="0A8-qu-zBl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k2o-yu-MHq"/>
+                        <viewControllerLayoutGuide type="bottom" id="9UK-ET-Jfp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l9t-vE-m55">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDY-6b-7To">
+                                <rect key="frame" x="313" y="617" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="6pR-CJ-H3M" kind="show" id="KVM-DQ-d6V"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77404577824683152" green="0.9403075116573163" blue="0.97647058959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYB-1p-tMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-825" y="860"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="cTN-Aw-RTF">
+            <objects>
+                <viewController id="STp-jk-wcy" customClass="TabBarViewController" customModule="CustomTabbarController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LUk-dw-CcO"/>
+                        <viewControllerLayoutGuide type="bottom" id="h5T-qz-Nek"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bfx-Ff-VXc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIE-yP-ulx">
+                                <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bM1-SI-cuf" userLabel="Settings">
+                                        <rect key="frame" x="16" y="-2" width="49" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="BU9-To-gie"/>
+                                            <constraint firstAttribute="width" constant="49" id="P6E-77-c33"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="004-controls"/>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k00-M4-8tK" userLabel="Home">
+                                        <rect key="frame" x="163" y="-21" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="9ys-hM-3tX"/>
+                                            <constraint firstAttribute="width" constant="48" id="Eaw-jy-8CH"/>
+                                        </constraints>
+                                        <state key="normal" image="musical-note"/>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz7-hW-YKf" userLabel="Scores">
+                                        <rect key="frame" x="309" y="-3" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="f6J-iE-F9w"/>
+                                            <constraint firstAttribute="width" constant="50" id="qfc-zD-pUd"/>
+                                        </constraints>
+                                        <state key="normal" image="002-sheet-music"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="k00-M4-8tK" firstAttribute="centerX" secondItem="CIE-yP-ulx" secondAttribute="centerX" id="6O4-pl-Z95"/>
+                                    <constraint firstAttribute="bottom" secondItem="bM1-SI-cuf" secondAttribute="bottom" constant="8" id="GVo-u0-Vkd"/>
+                                    <constraint firstAttribute="height" constant="55" id="SZm-34-YAL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bz7-hW-YKf" secondAttribute="trailing" constant="16" id="nMb-XV-lNs"/>
+                                    <constraint firstItem="bM1-SI-cuf" firstAttribute="leading" secondItem="CIE-yP-ulx" secondAttribute="leading" constant="16" id="rxq-Jo-BLC"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bz7-hW-YKf" secondAttribute="bottom" constant="8" id="wxG-du-Uf1"/>
+                                    <constraint firstAttribute="bottom" secondItem="k00-M4-8tK" secondAttribute="bottom" constant="28" id="y9w-ll-scS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CIE-yP-ulx" firstAttribute="leading" secondItem="bfx-Ff-VXc" secondAttribute="leading" id="U2q-pP-65Q"/>
+                            <constraint firstItem="h5T-qz-Nek" firstAttribute="top" secondItem="CIE-yP-ulx" secondAttribute="bottom" id="hni-lm-qOV"/>
+                            <constraint firstAttribute="trailing" secondItem="CIE-yP-ulx" secondAttribute="trailing" id="qT6-8V-iT3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="CIE-yP-ulx" id="TVp-vO-Rhw"/>
+                        <outletCollection property="buttons" destination="bM1-SI-cuf" collectionClass="NSMutableArray" id="WeZ-bN-Mua"/>
+                        <outletCollection property="buttons" destination="k00-M4-8tK" collectionClass="NSMutableArray" id="zwn-Gy-uGn"/>
+                        <outletCollection property="buttons" destination="Bz7-hW-YKf" collectionClass="NSMutableArray" id="bXF-HA-g7x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ws7-vW-hzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="376"/>
         </scene>
     </scenes>
     <resources>
+        <image name="002-sheet-music" width="512" height="512"/>
+        <image name="004-controls" width="512" height="512"/>
         <image name="KnowYourNotesBackgroundView1_1" width="375" height="667"/>
+        <image name="musical-note" width="512" height="512"/>
     </resources>
 </document>

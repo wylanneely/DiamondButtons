@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "002-sheet-music.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "002-sheet-music.png",
       "scale" : "2x"
     },
     {
