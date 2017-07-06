@@ -185,8 +185,8 @@
 		B25EACF31F0AC10500D44377 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B25EACF41F0AC11E00D44377 /* MainViewController.swift */,
 				B23073361F0EA5A200293480 /* TabBarViewController.swift */,
+				B25EACF41F0AC11E00D44377 /* MainViewController.swift */,
 				B23D03521F0EA940000D8424 /* SettingsViewController.swift */,
 				B23D03541F0EA961000D8424 /* ScoresViewController.swift */,
 			);

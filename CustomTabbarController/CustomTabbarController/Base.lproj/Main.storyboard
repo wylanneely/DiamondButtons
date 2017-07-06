@@ -13,7 +13,7 @@
         <!--Main-->
         <scene sceneID="JsZ-Pq-9pY">
             <objects>
-                <viewController title="Main" id="6pR-CJ-H3M" customClass="MainViewController" customModule="CustomTabbarController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" title="Main" id="6pR-CJ-H3M" customClass="MainViewController" customModule="CustomTabbarController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KEz-ou-rD2"/>
                         <viewControllerLayoutGuide type="bottom" id="0ny-P3-fcA"/>
@@ -54,21 +54,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRD-X6-WQc">
-                                <rect key="frame" x="16" y="617" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="0A8-qu-zBl" kind="show" id="4u3-Km-LHr"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0ny-P3-fcA" firstAttribute="top" secondItem="g9w-UZ-QPy" secondAttribute="bottom" id="42P-go-akv"/>
                             <constraint firstItem="sTQ-Zi-VQ5" firstAttribute="leading" secondItem="LaN-4m-XZq" secondAttribute="leading" id="7GH-LB-R4L"/>
-                            <constraint firstItem="RRD-X6-WQc" firstAttribute="leading" secondItem="LaN-4m-XZq" secondAttribute="leadingMargin" id="DTS-nX-yr4"/>
                             <constraint firstItem="kRE-Vm-7Ja" firstAttribute="leading" secondItem="LaN-4m-XZq" secondAttribute="leadingMargin" constant="28" id="EB9-t6-uBi"/>
-                            <constraint firstItem="0ny-P3-fcA" firstAttribute="top" secondItem="RRD-X6-WQc" secondAttribute="bottom" constant="20" id="EXp-Ti-JcR"/>
                             <constraint firstItem="g9w-UZ-QPy" firstAttribute="top" secondItem="LaN-4m-XZq" secondAttribute="top" id="Lw2-56-tmc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nlx-zl-rxW" secondAttribute="trailing" constant="28" id="bIf-eB-eMq"/>
                             <constraint firstAttribute="trailing" secondItem="g9w-UZ-QPy" secondAttribute="trailing" id="eML-Xa-sf2"/>
@@ -86,12 +77,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="982-JR-d6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="111" y="250"/>
+            <point key="canvasLocation" x="-794" y="870"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="1Kr-6b-tNv">
             <objects>
-                <viewController id="0A8-qu-zBl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="0A8-qu-zBl" customClass="SettingsViewController" customModule="CustomTabbarController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k2o-yu-MHq"/>
                         <viewControllerLayoutGuide type="bottom" id="9UK-ET-Jfp"/>
@@ -99,22 +90,30 @@
                     <view key="view" contentMode="scaleToFill" id="l9t-vE-m55">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDY-6b-7To">
-                                <rect key="frame" x="313" y="617" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="6pR-CJ-H3M" kind="show" id="KVM-DQ-d6V"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.77404577824683152" green="0.9403075116573163" blue="0.97647058959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYB-1p-tMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-825" y="860"/>
+            <point key="canvasLocation" x="-1522" y="869"/>
+        </scene>
+        <!--Scores View Controller-->
+        <scene sceneID="Y9c-WM-Cfs">
+            <objects>
+                <viewController storyboardIdentifier="ScoreViewController" id="2a2-nk-6oc" customClass="ScoresViewController" customModule="CustomTabbarController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zId-Lz-pcc"/>
+                        <viewControllerLayoutGuide type="bottom" id="fJy-Az-GKn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mE1-rw-ChE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.75472005210000004" blue="0.052381727429999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c09-xC-HVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-70" y="869"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="cTN-Aw-RTF">
@@ -138,6 +137,9 @@
                                             <constraint firstAttribute="width" constant="49" id="P6E-77-c33"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="004-controls"/>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="STp-jk-wcy" eventType="touchUpInside" id="Ucu-61-ePc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k00-M4-8tK" userLabel="Home">
                                         <rect key="frame" x="163" y="-21" width="48" height="48"/>
@@ -146,6 +148,9 @@
                                             <constraint firstAttribute="width" constant="48" id="Eaw-jy-8CH"/>
                                         </constraints>
                                         <state key="normal" image="musical-note"/>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="STp-jk-wcy" eventType="touchUpInside" id="hlx-ou-ahm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz7-hW-YKf" userLabel="Scores">
                                         <rect key="frame" x="309" y="-3" width="50" height="50"/>
@@ -154,6 +159,9 @@
                                             <constraint firstAttribute="width" constant="50" id="qfc-zD-pUd"/>
                                         </constraints>
                                         <state key="normal" image="002-sheet-music"/>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="STp-jk-wcy" eventType="touchUpInside" id="pn6-fE-7z9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -176,7 +184,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="contentView" destination="CIE-yP-ulx" id="TVp-vO-Rhw"/>
+                        <outlet property="contentView" destination="bfx-Ff-VXc" id="cdZ-dq-qHb"/>
                         <outletCollection property="buttons" destination="bM1-SI-cuf" collectionClass="NSMutableArray" id="WeZ-bN-Mua"/>
                         <outletCollection property="buttons" destination="k00-M4-8tK" collectionClass="NSMutableArray" id="zwn-Gy-uGn"/>
                         <outletCollection property="buttons" destination="Bz7-hW-YKf" collectionClass="NSMutableArray" id="bXF-HA-g7x"/>
@@ -184,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ws7-vW-hzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="376"/>
+            <point key="canvasLocation" x="-794" y="195"/>
         </scene>
     </scenes>
     <resources>

@@ -11,27 +11,56 @@ import UIKit
 class TabBarViewController: UIViewController {
     
     override func viewDidLoad() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-        settingsViewController = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
-        scoresViewController = storyboard.instantiateViewController(withIdentifier: "ScoreViewController")
         
-        viewControllerz = [mainViewController, settingsViewController,scoresViewController]
+        buttons[selectedIndex].isSelected = true
+        didPressTab(buttons[selectedIndex])
         
     }
     
-    var selectedIndex: Int = 0
+    var selectedIndex: Int = 1
     
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet var contentView: UIView!
     @IBOutlet var buttons: [UIButton]!
     
-    var mainViewController: UIViewController!
-    var settingsViewController: UIViewController!
-    var scoresViewController: UIViewController!
+    var viewControllers: [UIViewController] = {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+        let settingsViewController = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
+        let scoresViewController = storyboard.instantiateViewController(withIdentifier: "ScoreViewController")
+        
+        return [settingsViewController, mainViewController, scoresViewController]
+    }()
     
-    var viewControllerz: [UIViewController]!
+    @IBAction func didPressTab(_ sender: UIButton) {
+        let previousIndex = selectedIndex
+        selectedIndex = sender.tag
+        buttons[previousIndex].isSelected = false
+        
+        // Pops the previews view
+        let previousVC = viewControllers[previousIndex]
+        previousVC.willMove(toParentViewController: nil)
+        previousVC.view.removeFromSuperview()
+        previousVC.removeFromParentViewController()
+        
+        // Pushes on the new view
+        sender.isSelected = true
+        let vc = viewControllers[selectedIndex]
+        addChildViewController(vc)
+        
+        
+        //Adjust the size of the ViewController view you are adding to match the contentView of your tabBarViewController and add it as a subView of the contentView.
+        vc.view.frame = contentView.bounds 
+        contentView.addSubview(vc.view)
+        
+        
+        // Call the viewDidApperear you are adding using didMove(toParentViewController: self).
+        
+        vc.didMove(toParentViewController: self)
+        
+        
+    }
     
-    var viewControllers = [SettingsViewController(),MainViewController(), ScoresViewController()]
     
     
 }

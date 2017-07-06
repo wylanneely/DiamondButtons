@@ -13,9 +13,9 @@ class GameController {
     
     var lastPlaySoundIndex: Int?
     var lifes: Int = 3
-    var isPlaying: Bool = false
     var score: Int = 0
-    
+    var isPlaying: Bool = false
+
     let sound = SoundFilesPath()
     var soundPlayer = AVAudioPlayer()
     
