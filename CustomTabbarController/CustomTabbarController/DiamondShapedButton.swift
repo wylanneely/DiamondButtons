@@ -13,6 +13,9 @@ class DiamondShapedButton: UIButton {
     
     var soundController = SoundController()
     var path: UIBezierPath!
+    var hasButtonBeenTapped: Bool = false
+
+    
     
     
     override init(frame: CGRect) {

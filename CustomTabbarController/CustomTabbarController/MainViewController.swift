@@ -10,6 +10,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    //MARK: - GameMode
+    override func viewWillAppear(_ animated: Bool) {
+        updateLabels()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpButtons()
@@ -18,30 +23,43 @@ class MainViewController: UIViewController {
     
     //MARK: -Controllers
     var soundController = SoundController()
-    let game = GameController()
     
     //MARK: - Labels
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var livesLabel: UILabel!
     
     func updateLabels() {
-        self.scoreLabel.text = "Score: \(game.score)"
-        self.livesLabel.text = "Lives: \(game.lifes)"
+        self.scoreLabel.text = "Score: \(GameController.shared.score)"
+        self.livesLabel.text = "Lives: \(GameController.shared.lifes)"
     }
     
     //MARK: - IBActions
     @IBAction func resetButtonTapped(_ sender: Any) {
-        game.resetGame()
+        GameController.shared.resetGame()
         updateLabels()
     }
     @IBAction func playButtonTapped(_ sender: Any) {
-        game.getPlaySoundIndex()
-        guard let soundIndex = game.lastPlaySoundIndex else {return}
+        resetButtonStates()
+        GameController.shared.getPlaySoundIndex()
+        guard let soundIndex = GameController.shared.lastPlaySoundIndex else {return}
         soundController.playSoundWith(noteIndex: soundIndex)
         updateLabels()
-        
     }
     
+    func resetButtonStates() {
+        aButton.hasButtonBeenTapped = false
+        bButton.hasButtonBeenTapped = false
+        cButton.hasButtonBeenTapped = false
+        dButton.hasButtonBeenTapped = false
+        eButton.hasButtonBeenTapped = false
+        fButton.hasButtonBeenTapped = false
+        gButton.hasButtonBeenTapped = false
+    }
+    
+    
+    func hasButtonBeenTapped(button: DiamondShapedButton) -> Bool {
+        return button.hasButtonBeenTapped
+    }
     
     //MARK: - NoteButton Tapped
     func touchDown(button: DiamondShapedButton, event: UIEvent) {
@@ -49,22 +67,28 @@ class MainViewController: UIViewController {
             let location = touch.location(in: button)
             if button.path.contains(location) == true {
                 button.cancelTracking(with: nil)
+                // IF Button is Tapped inside the diamond then do code below
+                
+                if button.hasButtonBeenTapped == true {
+                    soundController.playSoundWith(noteIndex: button.tag)
+                    return
+                }
                 
                 soundController.playSoundWith(noteIndex: button.tag)
-                if game.isPlaying == true {
-                   let _ =  game.compareSoundToPlayedSound(buttonPressedIndex: button.tag)
-                        updateLabels()
+                if GameController.shared.isPlaying == true {
+                    GameController.shared.compareSoundToPlayedSound(buttonPressedIndex: button.tag)
+                    button.hasButtonBeenTapped = true
+                    updateLabels()
                     
-                    if game.lifes == 0 {
-                        self.presentAlert()
-                        
-                    }
+                    if GameController.shared.lifes == 0 {
+                        self.presentAlert() }
                 }
             }
         }
     }
     
     //MARK: - Buttons and Contraints
+    
     
     let aButton = DiamondShapedButton()
     let bButton = DiamondShapedButton()
@@ -73,6 +97,7 @@ class MainViewController: UIViewController {
     let eButton = DiamondShapedButton()
     let fButton = DiamondShapedButton()
     let gButton = DiamondShapedButton()
+    
     
     func setUpButtons() {
         
@@ -192,25 +217,19 @@ class MainViewController: UIViewController {
     
     //MARK: - Alert
     func presentAlert(){
-        
         let alertController = UIAlertController(title: "Finished", message: "Good Job, Try Again?", preferredStyle: .alert)
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
         }
-        
         let resetAction = UIAlertAction(title: "Reset", style: .default) { _ in
-            self.game.resetGame()
-            self.game.getPlaySoundIndex()
-            guard let soundIndex = self.game.lastPlaySoundIndex else {return}
+            GameController.shared.resetGame()
+            GameController.shared.getPlaySoundIndex()
+            guard let soundIndex = GameController.shared.lastPlaySoundIndex else {return}
             self.soundController.playSoundWith(noteIndex: soundIndex)
             self.updateLabels()
-            
         }
         alertController.addAction(resetAction)
         alertController.addAction(cancelAction)
-        
         self.present(alertController, animated: true, completion: nil)
-        
     }
 }
 

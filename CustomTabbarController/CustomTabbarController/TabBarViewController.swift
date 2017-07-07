@@ -14,7 +14,6 @@ class TabBarViewController: UIViewController {
         
         buttons[selectedIndex].isSelected = true
         didPressTab(buttons[selectedIndex])
-        
     }
     
     var selectedIndex: Int = 1
@@ -54,7 +53,7 @@ class TabBarViewController: UIViewController {
         //Adjust the size of the ViewController view you are adding to match the contentView of your tabBarViewController and add it as a subView of the contentView.
         vc.view.frame = contentView.bounds 
         contentView.addSubview(vc.view)
-    //    self.view.bringSubview(toFront: self.tabbar)
+        self.view.bringSubview(toFront: self.tabbar)
         
         
         // Call the viewDidApperear you are adding using didMove(toParentViewController: self).

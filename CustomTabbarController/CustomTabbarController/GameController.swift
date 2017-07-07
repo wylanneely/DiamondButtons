@@ -11,10 +11,14 @@ import AVFoundation
 
 class GameController {
     
+    static var shared = GameController()
+    
+    var gameMode: String = "Default"
     var lastPlaySoundIndex: Int?
-    var lifes: Int = 3
+    var lifes: Int = 5
     var score: Int = 0
     var isPlaying: Bool = false
+    
 
     let sound = SoundFilesPath()
     var soundPlayer = AVAudioPlayer()
@@ -25,9 +29,25 @@ class GameController {
         self.isPlaying = true
     }
     
-    func compareSoundToPlayedSound(buttonPressedIndex: Int ) -> Bool{
+    func setNumberOfLifes(int: Int) {
+        lifes = int
+    }
+    
+  @discardableResult  func compareSoundToPlayedSound(buttonPressedIndex: Int ) -> Bool{
         if lastPlaySoundIndex == buttonPressedIndex { score += 1; return true }
-        else{ lifes -= 1; return true }
+       if lastPlaySoundIndex != buttonPressedIndex { lifes -= 1; return true }
+    if self.gameMode == "Streak" {
+        if lastPlaySoundIndex != buttonPressedIndex {
+            self.score = 0
+            return true
+        }
+    }
+    return true
+    }
+    
+    
+    func updateGameMode(mode: String){
+        gameMode = mode
     }
     
     func isAlive() -> Bool{
@@ -42,6 +62,8 @@ class GameController {
         self.score = 0
         self.lastPlaySoundIndex = nil
     }
+    
+    
     
     
 }
