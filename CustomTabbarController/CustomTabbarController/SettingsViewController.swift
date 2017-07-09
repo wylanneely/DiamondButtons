@@ -19,6 +19,9 @@ class SettingsViewController: UIViewController {
         view.endEditing(true)
     }
     
+    
+    
+    
     @IBOutlet weak var easyButton: UIButton!
     @IBOutlet weak var medButton: UIButton!
     @IBOutlet weak var hardButton: UIButton!
@@ -47,7 +50,23 @@ class SettingsViewController: UIViewController {
 
 
     }
+    
+    @IBOutlet weak var pianoButton: UIButton!
+    @IBOutlet weak var guitarMajorButton: UIButton!
+    
   
+    @IBAction func pianoButtonTapped(_ sender: Any) {
+        SoundController.shared.isGuitarSound = false
+        pianoButton.setTitleColor(.green, for: .normal)
+        guitarMajorButton.setTitleColor(.blue, for: .normal)
+        
+    }
+    @IBAction func guitarMajorButtonTapped(_ sender: Any) {
+        SoundController.shared.isGuitarSound = true
+        pianoButton.setTitleColor(.blue, for: .normal)
+        guitarMajorButton.setTitleColor(.green, for: .normal)
+
+    }
 
     
     

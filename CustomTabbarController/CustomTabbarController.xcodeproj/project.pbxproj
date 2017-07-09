@@ -19,7 +19,7 @@
 		B21BD7FA1F0D7D080034F712 /* f.wav in Resources */ = {isa = PBXBuildFile; fileRef = B21BD7EE1F0D7D080034F712 /* f.wav */; };
 		B21BD7FB1F0D7D080034F712 /* gsharp.wav in Resources */ = {isa = PBXBuildFile; fileRef = B21BD7EF1F0D7D080034F712 /* gsharp.wav */; };
 		B21BD7FC1F0D7D080034F712 /* g.wav in Resources */ = {isa = PBXBuildFile; fileRef = B21BD7F01F0D7D080034F712 /* g.wav */; };
-		B21BD8001F0D7D830034F712 /* SoundFilesPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BD7FF1F0D7D830034F712 /* SoundFilesPath.swift */; };
+		B21BD8001F0D7D830034F712 /* PianoSoundFilesPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BD7FF1F0D7D830034F712 /* PianoSoundFilesPath.swift */; };
 		B21BD8021F0D7F190034F712 /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BD8011F0D7F190034F712 /* SoundController.swift */; };
 		B23073371F0EA5A200293480 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23073361F0EA5A200293480 /* TabBarViewController.swift */; };
 		B23D03531F0EA940000D8424 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D03521F0EA940000D8424 /* SettingsViewController.swift */; };
@@ -30,6 +30,14 @@
 		B25EACDE1F0AC05B00D44377 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B25EACDC1F0AC05B00D44377 /* LaunchScreen.storyboard */; };
 		B25EACE91F0AC05B00D44377 /* CustomTabbarControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EACE81F0AC05B00D44377 /* CustomTabbarControllerTests.swift */; };
 		B25EACF51F0AC11E00D44377 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EACF41F0AC11E00D44377 /* MainViewController.swift */; };
+		B276CA7B1F12AF100026C3F1 /* EMajorGuitarChord.wav in Resources */ = {isa = PBXBuildFile; fileRef = B276CA741F12AF100026C3F1 /* EMajorGuitarChord.wav */; };
+		B276CA7C1F12AF100026C3F1 /* DMajorGuitarChord.wav in Resources */ = {isa = PBXBuildFile; fileRef = B276CA751F12AF100026C3F1 /* DMajorGuitarChord.wav */; };
+		B276CA7D1F12AF100026C3F1 /* GMajorGuitarChord.wav in Resources */ = {isa = PBXBuildFile; fileRef = B276CA761F12AF100026C3F1 /* GMajorGuitarChord.wav */; };
+		B276CA7E1F12AF100026C3F1 /* FMajorGuitarChord.wav in Resources */ = {isa = PBXBuildFile; fileRef = B276CA771F12AF100026C3F1 /* FMajorGuitarChord.wav */; };
+		B276CA7F1F12AF100026C3F1 /* CMajorGuitarChord.wav in Resources */ = {isa = PBXBuildFile; fileRef = B276CA781F12AF100026C3F1 /* CMajorGuitarChord.wav */; };
+		B276CA801F12AF100026C3F1 /* BMajorGuitarChord.wav in Resources */ = {isa = PBXBuildFile; fileRef = B276CA791F12AF100026C3F1 /* BMajorGuitarChord.wav */; };
+		B276CA811F12AF100026C3F1 /* AMajorGuitarChord.wav in Resources */ = {isa = PBXBuildFile; fileRef = B276CA7A1F12AF100026C3F1 /* AMajorGuitarChord.wav */; };
+		B276CA831F12AF870026C3F1 /* GuitarMajorChords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B276CA821F12AF870026C3F1 /* GuitarMajorChords.swift */; };
 		B2F5C5A71F0D9058001AB3ED /* DiamondShapedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5C5A61F0D9058001AB3ED /* DiamondShapedButton.swift */; };
 		B2F5C5A91F0D9403001AB3ED /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5C5A81F0D9403001AB3ED /* GameController.swift */; };
 /* End PBXBuildFile section */
@@ -57,7 +65,7 @@
 		B21BD7EE1F0D7D080034F712 /* f.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = f.wav; path = ../../../../CapStone/LearnYourNotes/LearnYourNotes/f.wav; sourceTree = "<group>"; };
 		B21BD7EF1F0D7D080034F712 /* gsharp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gsharp.wav; path = ../../../../CapStone/LearnYourNotes/LearnYourNotes/gsharp.wav; sourceTree = "<group>"; };
 		B21BD7F01F0D7D080034F712 /* g.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = g.wav; path = ../../../../CapStone/LearnYourNotes/LearnYourNotes/g.wav; sourceTree = "<group>"; };
-		B21BD7FF1F0D7D830034F712 /* SoundFilesPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundFilesPath.swift; sourceTree = "<group>"; };
+		B21BD7FF1F0D7D830034F712 /* PianoSoundFilesPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoSoundFilesPath.swift; sourceTree = "<group>"; };
 		B21BD8011F0D7F190034F712 /* SoundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 		B23073361F0EA5A200293480 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B23D03521F0EA940000D8424 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +80,14 @@
 		B25EACE81F0AC05B00D44377 /* CustomTabbarControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarControllerTests.swift; sourceTree = "<group>"; };
 		B25EACEA1F0AC05B00D44377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B25EACF41F0AC11E00D44377 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B276CA741F12AF100026C3F1 /* EMajorGuitarChord.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = EMajorGuitarChord.wav; path = ../../../../../Documents/EMajorGuitarChord.wav; sourceTree = "<group>"; };
+		B276CA751F12AF100026C3F1 /* DMajorGuitarChord.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = DMajorGuitarChord.wav; path = ../../../../../Documents/DMajorGuitarChord.wav; sourceTree = "<group>"; };
+		B276CA761F12AF100026C3F1 /* GMajorGuitarChord.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = GMajorGuitarChord.wav; path = ../../../../../Documents/GMajorGuitarChord.wav; sourceTree = "<group>"; };
+		B276CA771F12AF100026C3F1 /* FMajorGuitarChord.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = FMajorGuitarChord.wav; path = ../../../../../Documents/FMajorGuitarChord.wav; sourceTree = "<group>"; };
+		B276CA781F12AF100026C3F1 /* CMajorGuitarChord.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = CMajorGuitarChord.wav; path = ../../../../../Documents/CMajorGuitarChord.wav; sourceTree = "<group>"; };
+		B276CA791F12AF100026C3F1 /* BMajorGuitarChord.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = BMajorGuitarChord.wav; path = ../../../../../Documents/BMajorGuitarChord.wav; sourceTree = "<group>"; };
+		B276CA7A1F12AF100026C3F1 /* AMajorGuitarChord.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = AMajorGuitarChord.wav; path = ../../../../../Documents/AMajorGuitarChord.wav; sourceTree = "<group>"; };
+		B276CA821F12AF870026C3F1 /* GuitarMajorChords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarMajorChords.swift; sourceTree = "<group>"; };
 		B2F5C5A61F0D9058001AB3ED /* DiamondShapedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiamondShapedButton.swift; sourceTree = "<group>"; };
 		B2F5C5A81F0D9403001AB3ED /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,18 +125,8 @@
 		B21BD7E41F0D7CFB0034F712 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				B21BD7E51F0D7D080034F712 /* a.wav */,
-				B21BD7E61F0D7D080034F712 /* b.wav */,
-				B21BD7E71F0D7D080034F712 /* bflat.wav */,
-				B21BD7E81F0D7D080034F712 /* csharp.wav */,
-				B21BD7E91F0D7D080034F712 /* c.wav */,
-				B21BD7EA1F0D7D080034F712 /* d.wav */,
-				B21BD7EB1F0D7D080034F712 /* e.wav */,
-				B21BD7EC1F0D7D080034F712 /* eflat.wav */,
-				B21BD7ED1F0D7D080034F712 /* fsharp.wav */,
-				B21BD7EE1F0D7D080034F712 /* f.wav */,
-				B21BD7EF1F0D7D080034F712 /* gsharp.wav */,
-				B21BD7F01F0D7D080034F712 /* g.wav */,
+				B276CA651F12AE080026C3F1 /* Guitar Sounds */,
+				B276CA641F12ADF10026C3F1 /* Piano Sounds */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -138,7 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				B2F5C5A61F0D9058001AB3ED /* DiamondShapedButton.swift */,
-				B21BD7FF1F0D7D830034F712 /* SoundFilesPath.swift */,
+				B21BD7FF1F0D7D830034F712 /* PianoSoundFilesPath.swift */,
+				B276CA821F12AF870026C3F1 /* GuitarMajorChords.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -191,6 +198,39 @@
 				B23D03541F0EA961000D8424 /* ScoresViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B276CA641F12ADF10026C3F1 /* Piano Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B21BD7E51F0D7D080034F712 /* a.wav */,
+				B21BD7E61F0D7D080034F712 /* b.wav */,
+				B21BD7E71F0D7D080034F712 /* bflat.wav */,
+				B21BD7E81F0D7D080034F712 /* csharp.wav */,
+				B21BD7E91F0D7D080034F712 /* c.wav */,
+				B21BD7EA1F0D7D080034F712 /* d.wav */,
+				B21BD7EB1F0D7D080034F712 /* e.wav */,
+				B21BD7EC1F0D7D080034F712 /* eflat.wav */,
+				B21BD7ED1F0D7D080034F712 /* fsharp.wav */,
+				B21BD7EE1F0D7D080034F712 /* f.wav */,
+				B21BD7EF1F0D7D080034F712 /* gsharp.wav */,
+				B21BD7F01F0D7D080034F712 /* g.wav */,
+			);
+			name = "Piano Sounds";
+			sourceTree = "<group>";
+		};
+		B276CA651F12AE080026C3F1 /* Guitar Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B276CA741F12AF100026C3F1 /* EMajorGuitarChord.wav */,
+				B276CA751F12AF100026C3F1 /* DMajorGuitarChord.wav */,
+				B276CA761F12AF100026C3F1 /* GMajorGuitarChord.wav */,
+				B276CA771F12AF100026C3F1 /* FMajorGuitarChord.wav */,
+				B276CA781F12AF100026C3F1 /* CMajorGuitarChord.wav */,
+				B276CA791F12AF100026C3F1 /* BMajorGuitarChord.wav */,
+				B276CA7A1F12AF100026C3F1 /* AMajorGuitarChord.wav */,
+			);
+			name = "Guitar Sounds";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,9 +317,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B276CA811F12AF100026C3F1 /* AMajorGuitarChord.wav in Resources */,
+				B276CA7F1F12AF100026C3F1 /* CMajorGuitarChord.wav in Resources */,
 				B21BD7FA1F0D7D080034F712 /* f.wav in Resources */,
 				B21BD7F31F0D7D080034F712 /* bflat.wav in Resources */,
 				B25EACDE1F0AC05B00D44377 /* LaunchScreen.storyboard in Resources */,
+				B276CA801F12AF100026C3F1 /* BMajorGuitarChord.wav in Resources */,
 				B25EACDB1F0AC05B00D44377 /* Assets.xcassets in Resources */,
 				B21BD7F61F0D7D080034F712 /* d.wav in Resources */,
 				B21BD7F21F0D7D080034F712 /* b.wav in Resources */,
@@ -290,7 +333,11 @@
 				B25EACD91F0AC05B00D44377 /* Main.storyboard in Resources */,
 				B21BD7FB1F0D7D080034F712 /* gsharp.wav in Resources */,
 				B21BD7FC1F0D7D080034F712 /* g.wav in Resources */,
+				B276CA7E1F12AF100026C3F1 /* FMajorGuitarChord.wav in Resources */,
 				B21BD7F91F0D7D080034F712 /* fsharp.wav in Resources */,
+				B276CA7D1F12AF100026C3F1 /* GMajorGuitarChord.wav in Resources */,
+				B276CA7B1F12AF100026C3F1 /* EMajorGuitarChord.wav in Resources */,
+				B276CA7C1F12AF100026C3F1 /* DMajorGuitarChord.wav in Resources */,
 				B21BD7F41F0D7D080034F712 /* csharp.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,8 +362,9 @@
 				B2F5C5A71F0D9058001AB3ED /* DiamondShapedButton.swift in Sources */,
 				B23D03551F0EA961000D8424 /* ScoresViewController.swift in Sources */,
 				B23073371F0EA5A200293480 /* TabBarViewController.swift in Sources */,
+				B276CA831F12AF870026C3F1 /* GuitarMajorChords.swift in Sources */,
 				B25EACD41F0AC05B00D44377 /* AppDelegate.swift in Sources */,
-				B21BD8001F0D7D830034F712 /* SoundFilesPath.swift in Sources */,
+				B21BD8001F0D7D830034F712 /* PianoSoundFilesPath.swift in Sources */,
 				B23D03531F0EA940000D8424 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

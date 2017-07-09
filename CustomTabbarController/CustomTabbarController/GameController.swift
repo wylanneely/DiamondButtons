@@ -19,8 +19,6 @@ class GameController {
     var score: Int = 0
     var isPlaying: Bool = false
     
-
-    let sound = SoundFilesPath()
     var soundPlayer = AVAudioPlayer()
     
     func getPlaySoundIndex(){
@@ -28,6 +26,8 @@ class GameController {
         self.lastPlaySoundIndex = randomIndex
         self.isPlaying = true
     }
+    
+    
     
     func setNumberOfLifes(int: Int) {
         lifes = int
@@ -38,13 +38,7 @@ class GameController {
        if lastPlaySoundIndex != buttonPressedIndex { lifes -= 1; return true }
     if self.gameMode == "Streak" {
         if lastPlaySoundIndex != buttonPressedIndex {
-            self.score = 0
-            return true
-        }
-    }
-    return true
-    }
-    
+            self.score = 0; return true } }; return true }
     
     func updateGameMode(mode: String){
         gameMode = mode

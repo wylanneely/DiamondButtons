@@ -91,51 +91,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kZt-vF-XbS">
-                                <rect key="frame" x="110" y="289" width="154" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gT0-9i-lQa">
+                                <rect key="frame" x="109.5" y="278.5" width="155" height="110.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Choose Dificulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-hm-CTC">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VXa-el-jNS">
-                                        <rect key="frame" x="0.0" y="30" width="154" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kZt-vF-XbS">
+                                        <rect key="frame" x="0.5" y="0.0" width="154" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dh-yy-LNP" userLabel="Easy">
-                                                <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
-                                                <state key="normal" title="Easy"/>
-                                                <connections>
-                                                    <action selector="easyButtonTapped:" destination="0A8-qu-zBl" eventType="touchUpInside" id="YQV-hH-jrz"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARM-Ic-BPY" userLabel="Med">
-                                                <rect key="frame" x="49" y="0.0" width="55" height="30"/>
-                                                <state key="normal" title="Medium"/>
-                                                <connections>
-                                                    <action selector="medButtonTapped:" destination="0A8-qu-zBl" eventType="touchUpInside" id="a8q-5Y-Pwa"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxI-Vx-R7e" userLabel="Hard">
-                                                <rect key="frame" x="120" y="0.0" width="34" height="30"/>
-                                                <state key="normal" title="Hard"/>
-                                                <connections>
-                                                    <action selector="hardButtonTapped:" destination="0A8-qu-zBl" eventType="touchUpInside" id="Yu6-fh-u0h"/>
-                                                </connections>
-                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Dificulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-hm-CTC">
+                                                <rect key="frame" x="0.0" y="0.0" width="126" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VXa-el-jNS">
+                                                <rect key="frame" x="0.0" y="30" width="154" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dh-yy-LNP" userLabel="Easy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                                        <state key="normal" title="Easy"/>
+                                                        <connections>
+                                                            <action selector="easyButtonTapped:" destination="0A8-qu-zBl" eventType="touchUpInside" id="YQV-hH-jrz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARM-Ic-BPY" userLabel="Med">
+                                                        <rect key="frame" x="49" y="0.0" width="55" height="30"/>
+                                                        <state key="normal" title="Medium"/>
+                                                        <connections>
+                                                            <action selector="medButtonTapped:" destination="0A8-qu-zBl" eventType="touchUpInside" id="a8q-5Y-Pwa"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxI-Vx-R7e" userLabel="Hard">
+                                                        <rect key="frame" x="120" y="0.0" width="34" height="30"/>
+                                                        <state key="normal" title="Hard"/>
+                                                        <connections>
+                                                            <action selector="hardButtonTapped:" destination="0A8-qu-zBl" eventType="touchUpInside" id="Yu6-fh-u0h"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RPE-re-NXJ">
+                                        <rect key="frame" x="0.0" y="60" width="155" height="50.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnO-hx-Sv4">
+                                                <rect key="frame" x="21.5" y="0.0" width="112.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="9g9-Y9-csD">
+                                                <rect key="frame" x="0.0" y="20.5" width="155" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lY8-Z0-ihr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
+                                                        <state key="normal" title="Piano"/>
+                                                        <connections>
+                                                            <action selector="pianoButtonTapped:" destination="0A8-qu-zBl" eventType="touchUpInside" id="q2E-NL-5Fb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkV-49-ntj">
+                                                        <rect key="frame" x="63" y="0.0" width="92" height="30"/>
+                                                        <state key="normal" title="Guitar Majors"/>
+                                                        <connections>
+                                                            <action selector="guitarMajorButtonTapped:" destination="0A8-qu-zBl" eventType="touchUpInside" id="t1M-P1-Mrd"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.77404577824683152" green="0.9403075116573163" blue="0.97647058959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gT0-9i-lQa" firstAttribute="centerY" secondItem="l9t-vE-m55" secondAttribute="centerY" id="32V-dz-clU"/>
+                            <constraint firstItem="gT0-9i-lQa" firstAttribute="centerX" secondItem="l9t-vE-m55" secondAttribute="centerX" id="ESj-Ci-Xy0"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="easyButton" destination="6Dh-yy-LNP" id="MgL-do-yV1"/>
+                        <outlet property="guitarMajorButton" destination="JkV-49-ntj" id="ovr-Ra-cG6"/>
                         <outlet property="hardButton" destination="xxI-Vx-R7e" id="olX-cT-0yb"/>
                         <outlet property="medButton" destination="ARM-Ic-BPY" id="aup-Di-5a6"/>
+                        <outlet property="pianoButton" destination="lY8-Z0-ihr" id="45g-a3-VUm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYB-1p-tMd" userLabel="First Responder" sceneMemberID="firstResponder"/>

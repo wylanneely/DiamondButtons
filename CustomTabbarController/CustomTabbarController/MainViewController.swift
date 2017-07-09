@@ -20,10 +20,7 @@ class MainViewController: UIViewController {
         setUpButtons()
         setupContraints()
     }
-    
-    //MARK: -Controllers
-    var soundController = SoundController()
-    
+        
     //MARK: - Labels
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var livesLabel: UILabel!
@@ -42,7 +39,7 @@ class MainViewController: UIViewController {
         resetButtonStates()
         GameController.shared.getPlaySoundIndex()
         guard let soundIndex = GameController.shared.lastPlaySoundIndex else {return}
-        soundController.playSoundWith(noteIndex: soundIndex)
+        SoundController.shared.playSoundWith(noteIndex: soundIndex)
         updateLabels()
     }
     
@@ -70,11 +67,11 @@ class MainViewController: UIViewController {
                 // IF Button is Tapped inside the diamond then do code below
                 
                 if button.hasButtonBeenTapped == true {
-                    soundController.playSoundWith(noteIndex: button.tag)
+                    SoundController.shared.playSoundWith(noteIndex: button.tag)
                     return
                 }
                 
-                soundController.playSoundWith(noteIndex: button.tag)
+                SoundController.shared.playSoundWith(noteIndex: button.tag)
                 if GameController.shared.isPlaying == true {
                     GameController.shared.compareSoundToPlayedSound(buttonPressedIndex: button.tag)
                     button.hasButtonBeenTapped = true
@@ -224,7 +221,7 @@ class MainViewController: UIViewController {
             GameController.shared.resetGame()
             GameController.shared.getPlaySoundIndex()
             guard let soundIndex = GameController.shared.lastPlaySoundIndex else {return}
-            self.soundController.playSoundWith(noteIndex: soundIndex)
+            SoundController.shared.playSoundWith(noteIndex: soundIndex)
             self.updateLabels()
         }
         alertController.addAction(resetAction)
