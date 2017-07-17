@@ -48,13 +48,13 @@ class SettingsViewController: UIViewController {
     
    
     @IBAction func pianoButtonTapped(_ sender: Any) {
-        SoundController.shared.isGuitarSound = .pianoSounds
+        SoundController.shared.audioFilePath = .pianoSounds
         pianoButton.setTitleColor(.green, for: .normal)
         guitarMajorButton.setTitleColor(.blue, for: .normal)
     }
     
     @IBAction func guitarMajorButtonTapped(_ sender: Any) {
-        SoundController.shared.isGuitarSound = .guitarMajorChords
+        SoundController.shared.audioFilePath = .guitarMajorChords
         pianoButton.setTitleColor(.blue, for: .normal)
         guitarMajorButton.setTitleColor(.green, for: .normal)
 

@@ -13,7 +13,6 @@ class GameController {
     
     static var shared = GameController()
     
-    var gameMode: String = "Default"
     var lastPlaySoundIndex: Int?
     var lifes: Int = 5
     var score: Int = 0
@@ -31,17 +30,17 @@ class GameController {
         lifes = int
     }
     
+    func comparePlayedSound(pressedButtonindex: Int ) -> Bool {
+        if lastPlaySoundIndex == pressedButtonindex { return true }
+        else { return false }
+        }
     
-    @discardableResult  func compareSoundToPlayedSound(buttonPressedIndex: Int ) -> Bool{
-        if lastPlaySoundIndex == buttonPressedIndex { score += 1; return true }
-        if lastPlaySoundIndex != buttonPressedIndex { lifes -= 1; return true }
-        if self.gameMode == "Streak" {
-            if lastPlaySoundIndex != buttonPressedIndex {
-                self.score = 0; return true } }; return true }
-    
-    
-    func updateGameMode(mode: String){
-        gameMode = mode
+    func updateLivesWith(buttonPressedIndex: Int){
+        if comparePlayedSound(pressedButtonindex: buttonPressedIndex) == true {
+            self.lifes += 1
+        } else {
+            self.lifes -= 1
+        }
     }
     
     func isAlive() -> Bool{

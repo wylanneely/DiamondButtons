@@ -60,6 +60,7 @@ class MainViewController: UIViewController {
     }
     
     //MARK: - NoteButton Tapped
+    
     func touchDown(button: DiamondShapedButton, event: UIEvent) {
         if let touch = event.touches(for: button)?.first {
             let location = touch.location(in: button)
@@ -73,20 +74,17 @@ class MainViewController: UIViewController {
                 }
                 
                 SoundController.shared.playSoundWith(noteIndex: button.tag)
-                if GameController.shared.isPlaying == true {
-                    GameController.shared.compareSoundToPlayedSound(buttonPressedIndex: button.tag)
-                    button.hasButtonBeenTapped = true
-                    updateLabels()
-                    
-                    if GameController.shared.lifes == 0 {
-                        self.presentAlert() }
-                }
+                GameController.shared.updateLivesWith(buttonPressedIndex: button.tag)
+                button.hasButtonBeenTapped = true
+                updateLabels()
+                if GameController.shared.lifes == 0 {
+                    self.presentAlert() }
             }
         }
     }
     
-    //MARK: - Buttons and Contraints
     
+    //MARK: - Buttons and Contraints
     
     let aButton = DiamondShapedButton()
     let bButton = DiamondShapedButton()

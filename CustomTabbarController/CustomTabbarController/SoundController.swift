@@ -18,12 +18,12 @@ struct SoundController {
     var pianoSoundFilePath = PianoSoundFilesPath()
     var guitarSoundFilePath = GuitarMajorChords()
 
-    var isGuitarSound: AudioFilePath = .pianoSounds
+    var audioFilePath: AudioFilePath = .pianoSounds
     
     
     mutating func playSoundWith(noteIndex: Int) {
         
-        if isGuitarSound == .pianoSounds {
+        if audioFilePath == .pianoSounds {
         guard let gSoundPath = pianoSoundFilePath.gSoundPath,
             let fSoundPath = pianoSoundFilePath.fSoundPath,
             let eSoundPath = pianoSoundFilePath.eSoundPath,
@@ -40,7 +40,7 @@ struct SoundController {
         } catch {}
         }
         
-        if isGuitarSound == .guitarMajorChords {
+        if audioFilePath == .guitarMajorChords {
             guard let gSoundPath = guitarSoundFilePath.gSoundPath,
                 let fSoundPath = guitarSoundFilePath.fSoundPath,
                 let eSoundPath = guitarSoundFilePath.eSoundPath,
