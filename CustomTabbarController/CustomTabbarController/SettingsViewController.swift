@@ -22,22 +22,22 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var easyButton: UIButton!
     @IBOutlet weak var medButton: UIButton!
     @IBOutlet weak var hardButton: UIButton!
+    @IBOutlet weak var pianoButton: UIButton!
+    @IBOutlet weak var guitarMajorButton: UIButton!
     
+   
     @IBAction func easyButtonTapped(_ sender: UIButton) {
         GameController.shared.setNumberOfLifes(int: 5)
         easyButton.setTitleColor(.green, for: .normal)
         hardButton.setTitleColor(.blue, for: .normal)
         medButton.setTitleColor(.blue, for: .normal)
-
-
     }
+    
     @IBAction func medButtonTapped(_ sender: UIButton) {
         GameController.shared.setNumberOfLifes(int: 3)
         easyButton.setTitleColor(.blue, for: .normal)
         medButton.setTitleColor(.green, for: .normal)
         hardButton.setTitleColor(.blue, for: .normal)
-
-
     }
     @IBAction func hardButtonTapped(_ sender: UIButton) {
         GameController.shared.setNumberOfLifes(int: 1)
@@ -46,22 +46,20 @@ class SettingsViewController: UIViewController {
         hardButton.setTitleColor(.green, for: .normal)
     }
     
-    @IBOutlet weak var pianoButton: UIButton!
-    @IBOutlet weak var guitarMajorButton: UIButton!
-    
-  
+   
     @IBAction func pianoButtonTapped(_ sender: Any) {
-        SoundController.shared.isGuitarSound = false
+        SoundController.shared.isGuitarSound = .pianoSounds
         pianoButton.setTitleColor(.green, for: .normal)
         guitarMajorButton.setTitleColor(.blue, for: .normal)
-        
     }
+    
     @IBAction func guitarMajorButtonTapped(_ sender: Any) {
-        SoundController.shared.isGuitarSound = true
+        SoundController.shared.isGuitarSound = .guitarMajorChords
         pianoButton.setTitleColor(.blue, for: .normal)
         guitarMajorButton.setTitleColor(.green, for: .normal)
 
     }
 
+    
 
 }

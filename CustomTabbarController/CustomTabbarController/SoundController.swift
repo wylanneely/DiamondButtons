@@ -9,6 +9,7 @@
 import Foundation
 import AVFoundation
 
+
 struct SoundController {
     
     static var shared = SoundController()
@@ -17,14 +18,12 @@ struct SoundController {
     var pianoSoundFilePath = PianoSoundFilesPath()
     var guitarSoundFilePath = GuitarMajorChords()
 
-    //
-    var isGuitarSound: Bool = false
+    var isGuitarSound: AudioFilePath = .pianoSounds
     
     
     mutating func playSoundWith(noteIndex: Int) {
         
-        if isGuitarSound == false {
-            
+        if isGuitarSound == .pianoSounds {
         guard let gSoundPath = pianoSoundFilePath.gSoundPath,
             let fSoundPath = pianoSoundFilePath.fSoundPath,
             let eSoundPath = pianoSoundFilePath.eSoundPath,
@@ -34,17 +33,14 @@ struct SoundController {
             let ASoundPath = pianoSoundFilePath.ASoundPath else { print("error getting soundsFilePath"); return }
         
         let soundsArray = [ASoundPath,bSoundPath,cSoundPath,dSoundPath,eSoundPath,fSoundPath,gSoundPath]
-        
         let soundPath = soundsArray[noteIndex]
-        
         do {
             try soundPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: soundPath) as URL, fileTypeHint: "wav")
             soundPlayer.play()
         } catch {}
-            
         }
-        if isGuitarSound == true {
-            
+        
+        if isGuitarSound == .guitarMajorChords {
             guard let gSoundPath = guitarSoundFilePath.gSoundPath,
                 let fSoundPath = guitarSoundFilePath.fSoundPath,
                 let eSoundPath = guitarSoundFilePath.eSoundPath,
@@ -54,18 +50,19 @@ struct SoundController {
                 let ASoundPath = guitarSoundFilePath.ASoundPath else { print("error getting soundsFilePath"); return }
             
             let soundsArray = [ASoundPath,bSoundPath,cSoundPath,dSoundPath,eSoundPath,fSoundPath,gSoundPath]
-            
             let soundPath = soundsArray[noteIndex]
-            
             do {
                 try soundPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: soundPath) as URL, fileTypeHint: "wav")
                 soundPlayer.play()
             } catch {}
-
-            
-            
         }
-        
 }
+    
+    
+    
 }
 
+enum AudioFilePath: String {
+    case guitarMajorChords = "guitarMajorChords"
+    case pianoSounds = "pianoSounds"
+}
