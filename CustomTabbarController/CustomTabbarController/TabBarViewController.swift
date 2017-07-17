@@ -26,6 +26,7 @@ class TabBarViewController: UIViewController {
     var viewControllers: [UIViewController] = {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
         let settingsViewController = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
         let scoresViewController = storyboard.instantiateViewController(withIdentifier: "ScoreViewController")

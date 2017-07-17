@@ -35,9 +35,9 @@ class GameController {
         else { return false }
         }
     
-    func updateLivesWith(buttonPressedIndex: Int){
-        if comparePlayedSound(pressedButtonindex: buttonPressedIndex) == true {
-            self.lifes += 1
+    func updateLivesAndScoreWith(buttonPressedSoundIndex: Int){
+        if comparePlayedSound(pressedButtonindex: buttonPressedSoundIndex) == true {
+            self.score += 1
         } else {
             self.lifes -= 1
         }

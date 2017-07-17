@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         updateLabels()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpButtons()
@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
         updateLabels()
         resetButtonStates()
     }
+    
     @IBAction func playButtonTapped(_ sender: Any) {
         resetButtonStates()
         GameController.shared.getPlaySoundIndex()
@@ -54,13 +55,11 @@ class MainViewController: UIViewController {
         gButton.hasButtonBeenTapped = false
     }
     
-    
     func hasButtonBeenTapped(button: DiamondShapedButton) -> Bool {
         return button.hasButtonBeenTapped
     }
     
     //MARK: - NoteButton Tapped
-    
     func touchDown(button: DiamondShapedButton, event: UIEvent) {
         if let touch = event.touches(for: button)?.first {
             let location = touch.location(in: button)
@@ -74,7 +73,7 @@ class MainViewController: UIViewController {
                 }
                 
                 SoundController.shared.playSoundWith(noteIndex: button.tag)
-                GameController.shared.updateLivesWith(buttonPressedIndex: button.tag)
+                GameController.shared.updateLivesAndScoreWith(buttonPressedSoundIndex: button.tag)
                 button.hasButtonBeenTapped = true
                 updateLabels()
                 if GameController.shared.lifes == 0 {
