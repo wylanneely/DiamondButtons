@@ -143,9 +143,9 @@
 		B21BD7FE1F0D7D130034F712 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B2F5C5A61F0D9058001AB3ED /* DiamondShapedButton.swift */,
 				B21BD7FF1F0D7D830034F712 /* PianoSoundFilesPath.swift */,
 				B276CA821F12AF870026C3F1 /* GuitarMajorChords.swift */,
+				B2F5C5A61F0D9058001AB3ED /* DiamondShapedButton.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";

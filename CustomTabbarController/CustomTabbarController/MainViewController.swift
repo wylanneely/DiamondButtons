@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
     @IBAction func resetButtonTapped(_ sender: Any) {
         GameController.shared.resetGame()
         updateLabels()
+        resetButtonStates()
     }
     @IBAction func playButtonTapped(_ sender: Any) {
         resetButtonStates()
@@ -218,11 +219,8 @@ class MainViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
         }
         let resetAction = UIAlertAction(title: "Reset", style: .default) { _ in
-            GameController.shared.resetGame()
-            GameController.shared.getPlaySoundIndex()
-            guard let soundIndex = GameController.shared.lastPlaySoundIndex else {return}
-            SoundController.shared.playSoundWith(noteIndex: soundIndex)
-            self.updateLabels()
+           self.resetButtonTapped(self)
+            self.playButtonTapped(self)
         }
         alertController.addAction(resetAction)
         alertController.addAction(cancelAction)

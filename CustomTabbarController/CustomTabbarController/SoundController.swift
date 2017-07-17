@@ -12,16 +12,16 @@ import AVFoundation
 struct SoundController {
     
     static var shared = SoundController()
-    
+       var soundPlayer:AVAudioPlayer = AVAudioPlayer()
+ 
     var pianoSoundFilePath = PianoSoundFilesPath()
     var guitarSoundFilePath = GuitarMajorChords()
-    
+
+    //
     var isGuitarSound: Bool = false
     
-    var soundPlayer:AVAudioPlayer = AVAudioPlayer()
     
     mutating func playSoundWith(noteIndex: Int) {
-        
         
         if isGuitarSound == false {
             

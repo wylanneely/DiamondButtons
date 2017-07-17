@@ -11,8 +11,6 @@ import AVFoundation
 
 struct PianoSoundFilesPath {
     
-    var soundPlayer:AVAudioPlayer = AVAudioPlayer()
-    
     let gSoundPath = Bundle.main.path(forResource: "g", ofType: "wav")
     let gSharpPath = Bundle.main.path(forResource: "gsharp", ofType: "wav")
     let fSharpPath = Bundle.main.path(forResource: "fsharp", ofType: "wav")

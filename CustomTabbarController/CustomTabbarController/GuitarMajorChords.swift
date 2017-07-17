@@ -10,9 +10,7 @@ import Foundation
 import AVFoundation
 
 struct GuitarMajorChords {
-    
-    var soundPlayer:AVAudioPlayer = AVAudioPlayer()
-    
+        
     let gSoundPath = Bundle.main.path(forResource: "GMajorGuitarChord", ofType: "wav")
     let fSoundPath = Bundle.main.path(forResource: "FMajorGuitarChord", ofType: "wav")
     let eSoundPath = Bundle.main.path(forResource: "EMajorGuitarChord", ofType: "wav")

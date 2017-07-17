@@ -19,9 +19,6 @@ class SettingsViewController: UIViewController {
         view.endEditing(true)
     }
     
-    
-    
-    
     @IBOutlet weak var easyButton: UIButton!
     @IBOutlet weak var medButton: UIButton!
     @IBOutlet weak var hardButton: UIButton!
@@ -47,8 +44,6 @@ class SettingsViewController: UIViewController {
         easyButton.setTitleColor(.blue, for: .normal)
         medButton.setTitleColor(.blue, for: .normal)
         hardButton.setTitleColor(.green, for: .normal)
-
-
     }
     
     @IBOutlet weak var pianoButton: UIButton!
@@ -68,10 +63,5 @@ class SettingsViewController: UIViewController {
 
     }
 
-    
-    
-    
-    
-    
 
 }

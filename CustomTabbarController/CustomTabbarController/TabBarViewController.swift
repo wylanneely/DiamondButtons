@@ -49,12 +49,11 @@ class TabBarViewController: UIViewController {
         let vc = viewControllers[selectedIndex]
         addChildViewController(vc)
         
-        
         //Adjust the size of the ViewController view you are adding to match the contentView of your tabBarViewController and add it as a subView of the contentView.
         vc.view.frame = contentView.bounds 
         contentView.addSubview(vc.view)
-        self.view.bringSubview(toFront: self.tabbar)
         
+        self.view.bringSubview(toFront: self.tabbar)
         
         // Call the viewDidApperear you are adding using didMove(toParentViewController: self).
         
