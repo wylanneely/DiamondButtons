@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    var startingLives: Int = 3
+    
     //MARK: - GameMode
     override func viewWillAppear(_ animated: Bool) {
         updateLabels()
@@ -33,6 +35,7 @@ class MainViewController: UIViewController {
     //MARK: - IBActions
     @IBAction func resetButtonTapped(_ sender: Any) {
         GameController.shared.resetGame()
+        GameController.shared.lifes = GameController.shared.startingLives
         updateLabels()
         resetButtonStates()
     }
@@ -55,6 +58,16 @@ class MainViewController: UIViewController {
         gButton.hasButtonBeenTapped = false
     }
     
+    func setButtonsStatesToBeenTapped(){
+        aButton.hasButtonBeenTapped = true
+        bButton.hasButtonBeenTapped = true
+        cButton.hasButtonBeenTapped = true
+        dButton.hasButtonBeenTapped = true
+        eButton.hasButtonBeenTapped = true
+        fButton.hasButtonBeenTapped = true
+        gButton.hasButtonBeenTapped = true
+    }
+    
     func hasButtonBeenTapped(button: DiamondShapedButton) -> Bool {
         return button.hasButtonBeenTapped
     }
@@ -71,10 +84,14 @@ class MainViewController: UIViewController {
                     SoundController.shared.playSoundWith(noteIndex: button.tag)
                     return
                 }
-                
+                let scoreBeforeChange = GameController.shared.score
                 SoundController.shared.playSoundWith(noteIndex: button.tag)
                 GameController.shared.updateLivesAndScoreWith(buttonPressedSoundIndex: button.tag)
+                let scoreAfterChange = GameController.shared.score
                 button.hasButtonBeenTapped = true
+                if scoreAfterChange != scoreBeforeChange {
+                    setButtonsStatesToBeenTapped()
+                }
                 updateLabels()
                 
                 if GameController.shared.lifes == 0 {

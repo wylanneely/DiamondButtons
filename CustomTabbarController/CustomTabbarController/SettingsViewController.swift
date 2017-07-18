@@ -29,6 +29,7 @@ class SettingsViewController: UIViewController {
    
     @IBAction func easyButtonTapped(_ sender: UIButton) {
         GameController.shared.setNumberOfLifes(int: 5)
+        GameController.shared.resetGame()
         easyButton.setTitleColor(.green, for: .normal)
         hardButton.setTitleColor(.blue, for: .normal)
         medButton.setTitleColor(.blue, for: .normal)
@@ -36,12 +37,14 @@ class SettingsViewController: UIViewController {
     
     @IBAction func medButtonTapped(_ sender: UIButton) {
         GameController.shared.setNumberOfLifes(int: 3)
+        GameController.shared.resetGame()
         easyButton.setTitleColor(.blue, for: .normal)
         medButton.setTitleColor(.green, for: .normal)
         hardButton.setTitleColor(.blue, for: .normal)
     }
     @IBAction func hardButtonTapped(_ sender: UIButton) {
         GameController.shared.setNumberOfLifes(int: 1)
+        GameController.shared.resetGame()
         easyButton.setTitleColor(.blue, for: .normal)
         medButton.setTitleColor(.blue, for: .normal)
         hardButton.setTitleColor(.green, for: .normal)
@@ -50,6 +53,7 @@ class SettingsViewController: UIViewController {
    
     @IBAction func pianoButtonTapped(_ sender: Any) {
         SoundController.shared.audioFilePath = .pianoSounds
+        GameController.shared.resetGame()
         pianoButton.setTitleColor(.green, for: .normal)
         guitarMajorButton.setTitleColor(.blue, for: .normal)
         violinButton.setTitleColor(.blue, for: .normal)
@@ -57,14 +61,15 @@ class SettingsViewController: UIViewController {
     
     @IBAction func guitarMajorButtonTapped(_ sender: Any) {
         SoundController.shared.audioFilePath = .guitarMajorChords
+        GameController.shared.resetGame()
         pianoButton.setTitleColor(.blue, for: .normal)
         guitarMajorButton.setTitleColor(.green, for: .normal)
         violinButton.setTitleColor(.blue, for: .normal)
-
     }
     
     @IBAction func violinButtonTapped(_ sender: Any) {
         SoundController.shared.audioFilePath = .violinSounds
+        GameController.shared.resetGame()
         pianoButton.setTitleColor(.blue, for: .normal)
         guitarMajorButton.setTitleColor(.blue, for: .normal)
         violinButton.setTitleColor(.green, for: .normal)

@@ -53,7 +53,6 @@ class GameController {
     }
     
     func resetGame(){
-        self.lifes = 3
         self.score = 0
         self.lastPlaySoundIndex = nil
     }
