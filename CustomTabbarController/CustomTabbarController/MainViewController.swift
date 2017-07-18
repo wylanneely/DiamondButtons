@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var livesLabel: UILabel!
     
     func updateLabels() {
-        self.scoreLabel.text = "Score: \(GameController.shared.score)"
+        self.scoreLabel.text = "\(GameController.shared.score)"
         self.livesLabel.text = "Lives: \(GameController.shared.lifes)"
     }
     
@@ -76,13 +76,13 @@ class MainViewController: UIViewController {
                 GameController.shared.updateLivesAndScoreWith(buttonPressedSoundIndex: button.tag)
                 button.hasButtonBeenTapped = true
                 updateLabels()
+                
                 if GameController.shared.lifes == 0 {
                     
-                    
-                    
-                    self.presentAlert()
-                
-                
+                    if HighScoreController.shared.isNewHighScoreAHighScore(newScore: GameController.shared.score) == true {
+                        self.presentHighScoreAlert(score: GameController.shared.score)
+                        
+                    } else { self.presentAlert() }
                 }
             }
         }
@@ -102,7 +102,7 @@ class MainViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func presentHighScoreAlert(){
+    func presentHighScoreAlert(score: Int){
         
         
         let alertController = UIAlertController(title: "HighScore", message: "Good Job! You made the Highscores", preferredStyle: .alert)
@@ -111,13 +111,11 @@ class MainViewController: UIViewController {
         let resetAction = UIAlertAction(title: "Submit", style: .default) { _ in
             self.resetButtonTapped(self)
             guard let name = alertController.textFields?[0].text else {return}
-             let score = GameController.shared.score
             let startingLifes = GameController.shared.startingLives
+            
             let highscore = HighScore(name: name, lives: startingLifes, score: score)
             
             HighScoreController.shared.compareAndSave(newHighScore: highscore)
-            
-            
             
             
             

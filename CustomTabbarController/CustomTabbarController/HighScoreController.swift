@@ -12,7 +12,7 @@ import Foundation
 class HighScoreController {
     
     init() {
-       let mock = HighScore(name: "Yolo", lives: 0, score: 3)
+       let mock = HighScore(name: "Yolo", lives: 0, score: 0)
         self.highScores = [mock,mock,mock,mock,mock]
     }
     
@@ -35,10 +35,20 @@ class HighScoreController {
     
     func isNewHighScoreAHighScore(newScore: Int) -> Bool {
         
-        for score in highScores {
-            if newScore >= score.score { return true }
-        }
-        return false
+        
+        let highScore1 = highScores[0]
+        let highScore2 = highScores[1]
+        let highScore3 = highScores[2]
+        let highScore4 = highScores[3]
+        let highScore5 = highScores[4]
+        
+        if newScore > highScore1.score { return true }
+        if newScore > highScore2.score { return true }
+        if newScore > highScore3.score { return true }
+        if newScore > highScore4.score { return true }
+        if newScore >= highScore5.score{ return true } else { return false }
+        
+        
     }
 }
 
