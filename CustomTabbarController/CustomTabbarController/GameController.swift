@@ -14,6 +14,7 @@ class GameController {
     static var shared = GameController()
     
     var lastPlaySoundIndex: Int?
+    var startingLives: Int = 5
     var lifes: Int = 5
     var score: Int = 0
     var isPlaying: Bool = false
@@ -28,6 +29,7 @@ class GameController {
     
     func setNumberOfLifes(int: Int) {
         lifes = int
+        startingLives = int
     }
     
     func comparePlayedSound(pressedButtonindex: Int ) -> Bool {

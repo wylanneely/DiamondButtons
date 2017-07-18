@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var pianoButton: UIButton!
     @IBOutlet weak var guitarMajorButton: UIButton!
     
+    @IBOutlet weak var violinButton: UIButton!
    
     @IBAction func easyButtonTapped(_ sender: UIButton) {
         GameController.shared.setNumberOfLifes(int: 5)
@@ -51,14 +52,24 @@ class SettingsViewController: UIViewController {
         SoundController.shared.audioFilePath = .pianoSounds
         pianoButton.setTitleColor(.green, for: .normal)
         guitarMajorButton.setTitleColor(.blue, for: .normal)
+        violinButton.setTitleColor(.blue, for: .normal)
     }
     
     @IBAction func guitarMajorButtonTapped(_ sender: Any) {
         SoundController.shared.audioFilePath = .guitarMajorChords
         pianoButton.setTitleColor(.blue, for: .normal)
         guitarMajorButton.setTitleColor(.green, for: .normal)
+        violinButton.setTitleColor(.blue, for: .normal)
 
     }
+    
+    @IBAction func violinButtonTapped(_ sender: Any) {
+        SoundController.shared.audioFilePath = .violinSounds
+        pianoButton.setTitleColor(.blue, for: .normal)
+        guitarMajorButton.setTitleColor(.blue, for: .normal)
+        violinButton.setTitleColor(.green, for: .normal)
+    }
+    
 
     
 

@@ -77,10 +77,63 @@ class MainViewController: UIViewController {
                 button.hasButtonBeenTapped = true
                 updateLabels()
                 if GameController.shared.lifes == 0 {
-                    self.presentAlert() }
+                    
+                    
+                    
+                    self.presentAlert()
+                
+                
+                }
             }
         }
     }
+    
+    //MARK: - Alert
+    func presentAlert(){
+        let alertController = UIAlertController(title: "Finished", message: "Good Job, Try Again?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+        }
+        let resetAction = UIAlertAction(title: "Reset", style: .default) { _ in
+            self.resetButtonTapped(self)
+            self.playButtonTapped(self)
+        }
+        alertController.addAction(resetAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentHighScoreAlert(){
+        
+        
+        let alertController = UIAlertController(title: "HighScore", message: "Good Job! You made the Highscores", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+        }
+        let resetAction = UIAlertAction(title: "Submit", style: .default) { _ in
+            self.resetButtonTapped(self)
+            guard let name = alertController.textFields?[0].text else {return}
+             let score = GameController.shared.score
+            let startingLifes = GameController.shared.startingLives
+            let highscore = HighScore(name: name, lives: startingLifes, score: score)
+            
+            HighScoreController.shared.compareAndSave(newHighScore: highscore)
+            
+            
+            
+            
+            
+        }
+        
+    
+        
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Name..."
+        }
+        alertController.addAction(resetAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     
     
     //MARK: - Buttons and Contraints
@@ -120,7 +173,6 @@ class MainViewController: UIViewController {
         view.addSubview(fButton)
         view.addSubview(gButton)
     }
-    
     func setupContraints(){
         
         aButton.translatesAutoresizingMaskIntoConstraints = false
@@ -209,20 +261,7 @@ class MainViewController: UIViewController {
         self.view.addConstraints([gButtonXConstraint,gButtonYConstraint,gButtonWidth,gButtonHeight])
         
     }
-    
-    //MARK: - Alert
-    func presentAlert(){
-        let alertController = UIAlertController(title: "Finished", message: "Good Job, Try Again?", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
-        }
-        let resetAction = UIAlertAction(title: "Reset", style: .default) { _ in
-           self.resetButtonTapped(self)
-            self.playButtonTapped(self)
-        }
-        alertController.addAction(resetAction)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
+
 }
 
 
