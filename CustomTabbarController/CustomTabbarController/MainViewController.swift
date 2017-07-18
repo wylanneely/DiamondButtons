@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var livesLabel: UILabel!
     
     func updateLabels() {
-        self.scoreLabel.text = "\(GameController.shared.score)"
+        self.scoreLabel.text = "Score: \(GameController.shared.score)"
         self.livesLabel.text = "Lives: \(GameController.shared.lifes)"
     }
     
@@ -88,7 +88,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    //MARK: - Alert
+    //MARK: - Alerts
     func presentAlert(){
         let alertController = UIAlertController(title: "Finished", message: "Good Job, Try Again?", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
@@ -103,26 +103,17 @@ class MainViewController: UIViewController {
     }
     
     func presentHighScoreAlert(score: Int){
-        
-        
         let alertController = UIAlertController(title: "HighScore", message: "Good Job! You made the Highscores", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
         }
+        
         let resetAction = UIAlertAction(title: "Submit", style: .default) { _ in
             self.resetButtonTapped(self)
             guard let name = alertController.textFields?[0].text else {return}
             let startingLifes = GameController.shared.startingLives
-            
             let highscore = HighScore(name: name, lives: startingLifes, score: score)
-            
             HighScoreController.shared.compareAndSave(newHighScore: highscore)
-            
-            
-            
         }
-        
-    
-        
         
         alertController.addTextField { (textField) in
             textField.placeholder = "Name..."

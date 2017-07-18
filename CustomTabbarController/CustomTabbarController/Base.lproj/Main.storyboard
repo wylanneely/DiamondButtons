@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="STp-jk-wcy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="STp-jk-wcy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -283,10 +283,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k00-M4-8tK" userLabel="Home">
-                                        <rect key="frame" x="163" y="-21" width="48" height="48"/>
+                                        <rect key="frame" x="157" y="-13" width="60" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="9ys-hM-3tX"/>
-                                            <constraint firstAttribute="width" constant="48" id="Eaw-jy-8CH"/>
+                                            <constraint firstAttribute="height" constant="60" id="9ys-hM-3tX"/>
+                                            <constraint firstAttribute="width" constant="60" id="Eaw-jy-8CH"/>
                                         </constraints>
                                         <state key="normal" image="musical-note"/>
                                         <connections>
@@ -313,7 +313,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Bz7-hW-YKf" secondAttribute="trailing" constant="16" id="nMb-XV-lNs"/>
                                     <constraint firstItem="bM1-SI-cuf" firstAttribute="leading" secondItem="CIE-yP-ulx" secondAttribute="leading" constant="16" id="rxq-Jo-BLC"/>
                                     <constraint firstAttribute="bottom" secondItem="Bz7-hW-YKf" secondAttribute="bottom" constant="8" id="wxG-du-Uf1"/>
-                                    <constraint firstAttribute="bottom" secondItem="k00-M4-8tK" secondAttribute="bottom" constant="28" id="y9w-ll-scS"/>
+                                    <constraint firstAttribute="bottom" secondItem="k00-M4-8tK" secondAttribute="bottom" constant="8" id="y9w-ll-scS"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -334,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ws7-vW-hzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-794" y="195"/>
+            <point key="canvasLocation" x="-794.39999999999998" y="194.75262368815595"/>
         </scene>
     </scenes>
     <resources>
