@@ -16,7 +16,7 @@ class TabBarViewController: UIViewController {
         didPressTab(buttons[selectedIndex])
     }
     
-    var selectedIndex: Int = 1
+    var selectedIndex: Int = 0
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var tabbar: UIView!

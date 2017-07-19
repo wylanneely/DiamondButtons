@@ -21,7 +21,6 @@ struct SoundController {
     
     var audioFilePath: AudioFilePath = .pianoSounds
     
-    
     mutating func playSoundWith(noteIndex: Int) {
         
         if audioFilePath == .pianoSounds {

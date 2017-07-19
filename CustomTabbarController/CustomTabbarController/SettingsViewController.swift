@@ -10,10 +10,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet weak var sheetImage: UIImageView!
+    
     override func viewDidLoad() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
+       sheetImage.image = #imageLiteral(resourceName: "002-sheet-music").alpha(0.3)
         easyButton.setTitleColor(.green, for: .normal)
+        pianoButton.setTitleColor(.green, for: .normal)
     }
     func dismissKeyboard() {
         view.endEditing(true)
@@ -74,8 +78,17 @@ class SettingsViewController: UIViewController {
         guitarMajorButton.setTitleColor(.blue, for: .normal)
         violinButton.setTitleColor(.green, for: .normal)
     }
-    
+}
 
+extension UIImage{
     
-
+    func alpha(_ value:CGFloat)->UIImage
+    {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(at: CGPoint.zero, blendMode: .normal, alpha: value)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+        
+    }
 }
