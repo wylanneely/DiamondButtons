@@ -38,6 +38,8 @@ struct SoundController {
             let soundPath = soundsArray[noteIndex]
             do {
                 try soundPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: soundPath) as URL, fileTypeHint: "wav")
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                
                 soundPlayer.play()
             } catch {}
         }
